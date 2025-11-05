@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev:backend": "nodemon --watch backend/src --ext js,json --signal SIGINT --exec \"node backend/src/index.js\"",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "concurrently -n backend,frontend -c blue,magenta \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "start": "node backend/src/index.js"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.10",
+    "concurrently": "^9.1.2"
+  }
+}
